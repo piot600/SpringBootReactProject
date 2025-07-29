@@ -1,8 +1,8 @@
-DROP TABLE  IF EXISTS account;
+DROP TABLE  IF EXISTS note;
 
-CREATE TABLE account (
-                         id INT AUTO_INCREMENT PRIMARY KEY,
-                         first_name VARCHAR(50) NOT NULL,
-                         last_name VARCHAR(50) NOT NULL,
-                         email VARCHAR(100) NOT NULL
+CREATE TABLE note (
+                         note_id INT AUTO_INCREMENT PRIMARY KEY,
+                         note_title VARCHAR(50) NOT NULL,
+                         note_description VARCHAR(500),
+                         note_created DATE NOT NULL
 );

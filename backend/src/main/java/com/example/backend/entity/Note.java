@@ -3,26 +3,28 @@ package com.example.backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 @Data
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Account {
+public class Note {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int noteId;
 
     @Column(nullable = false, length = 50)
-    private String firstName;
+    private String noteTitle;
 
-    @Column(nullable = false, length = 50)
-    private String lastName;
+    @Column(length = 500)
+    private String noteDescription;
 
-    @Column(nullable = false, unique = true, length = 100)
-    private String email;
-
+    @Column(nullable = false)
+    private LocalDate noteCreated;
 }
 
